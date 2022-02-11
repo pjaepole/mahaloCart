@@ -16,17 +16,20 @@ import Navbar from './src/components/Navbar';
 import ShoppingCart from './src/components/ShoppingCart';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import {Provider} from 'react-redux';
+import store from './src/store/index';
 const Stack = createNativeStackNavigator();
 const App: () => Node = () => {
   return (
-    <NavigationContainer>
-      <Navbar />
-      <Stack.Navigator initialRouteName="Product">
-        <Stack.Screen name="Product" component={ProductsContainer}/>
-        <Stack.Screen name="Shopping Cart" component={ShoppingCart} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Navbar />
+        <Stack.Navigator initialRouteName="Product">
+          <Stack.Screen name="Product" component={ProductsContainer}/>
+          <Stack.Screen name="Shopping Cart" component={ShoppingCart} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

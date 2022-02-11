@@ -7,14 +7,25 @@ import {
     Text,
     useColorScheme,
     View,
+    Button
   } from 'react-native';
+import {connect} from 'react-redux';
   
-const ShoppingCart=()=>{
+const ShoppingCart=(props)=>{
     return(
-        <View>
+        <ScrollView>
             <Text>This is Shopping cart</Text>
-        </View>
+            <Button 
+                title='Go to Products'
+                onPress={() => props.navigation.navigate('Product')}/>
+        </ScrollView>
     )
 }
-export default ShoppingCart;
+
+const mapStateToProps = (state)=>{
+    console.log('thisis shoppingcart state',state)
+    return {
+    }
+  }
+export default connect(mapStateToProps)(ShoppingCart);
 
