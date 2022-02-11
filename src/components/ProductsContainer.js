@@ -11,6 +11,8 @@ import {
   } from 'react-native';
 import ProductIndividual from './ProductIndividual';
 import Data from '../data/products';
+import {connect} from 'react-redux';
+import {cartRemoveItem, cartAddItem } from '../actions/index';
 const ProductsContainer =(props)=>{
     console.log('thisis',props)
     return(
@@ -30,4 +32,11 @@ const styles = StyleSheet.create({
    }
   });
 
-export default ProductsContainer
+
+  const mapStateToProps = (state)=>{
+    console.log('thisis productContainer state',state.cart)
+    return {
+        cartContents:state.cart
+    }
+  }  
+export default connect(mapStateToProps)(ProductsContainer);

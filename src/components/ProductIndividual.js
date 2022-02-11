@@ -10,7 +10,10 @@ import {
     Image,
     Button
   } from 'react-native';
+  import {connect} from 'react-redux';
+import {cartRemoveItem, cartAddItem } from '../actions/index';
 const ProductIndividual=(props)=>{
+    console.log('productIndividual',props.cartContents)
     const {item}=props
     return(
         <View style={styles.root}>
@@ -21,7 +24,7 @@ const ProductIndividual=(props)=>{
             <Text style={styles.itemName} numberOfLines={2}>{item.title}</Text>
             <Text style={styles.itemPrice}>${item.price}</Text>
             <View style={styles.itemButtonContainer}>
-                <Button  title='Add to Cart'/>
+                <Button onPress={()=>props.dispatch(cartAddItem(item))} title='Add to Cart'/>
             </View>
         </View>
     </View>
@@ -57,4 +60,11 @@ const styles = StyleSheet.create({
     }
   });
 
-export default ProductIndividual;
+
+
+  const mapStateToProps = (state)=>{
+    return {
+        cartContents:state.cart
+    }
+  }  
+export default connect(mapStateToProps)(ProductIndividual);
