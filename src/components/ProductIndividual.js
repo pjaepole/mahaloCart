@@ -12,7 +12,6 @@ import {
   } from 'react-native';
 const ProductIndividual=(props)=>{
     const {item}=props
-    console.log(item)
     return(
         <View style={styles.root}>
         <View >

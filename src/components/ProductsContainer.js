@@ -7,13 +7,17 @@ import {
     Text,
     useColorScheme,
     View,
+    Button
   } from 'react-native';
 import ProductIndividual from './ProductIndividual';
 import Data from '../data/products';
-const ProductsContainer =()=>{
+const ProductsContainer =(props)=>{
+    console.log('thisis',props)
     return(
         <ScrollView>
-            <Text style={styles.header}>Mock Products</Text>
+            <Button 
+                title='Go TO Cart'
+                onPress={() => props.navigation.navigate('Shopping Cart')}/>
             {Data.map((item)=>(<ProductIndividual key={item.id} item={item}/>))}
         </ScrollView>
     )

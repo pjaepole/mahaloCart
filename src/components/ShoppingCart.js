@@ -8,6 +8,7 @@ import {
     useColorScheme,
     View,
   } from 'react-native';
+  
 const ShoppingCart=()=>{
     return(
         <View>
@@ -15,4 +16,5 @@ const ShoppingCart=()=>{
         </View>
     )
 }
-export default ShoppingCart
+export default ShoppingCart;
+
