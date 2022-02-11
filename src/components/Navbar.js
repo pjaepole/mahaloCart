@@ -14,7 +14,7 @@ import {
 const Navbar=()=>{
     return(
         <View style={styles.navbarContainer}>
-            <Text>this is a Navbar</Text>
+            <Text>this is a Navbard</Text>
         </View>
     )
 }

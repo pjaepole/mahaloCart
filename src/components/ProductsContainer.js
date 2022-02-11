@@ -14,8 +14,7 @@ const ProductsContainer =()=>{
     return(
         <ScrollView>
             <Text style={styles.header}>Mock Products</Text>
-            {Data.map((item)=>(<ProductIndividual item={item}/>))}
-            {/* <ProductIndividual data={Data}/> */}
+            {Data.map((item)=>(<ProductIndividual key={item.id} item={item}/>))}
         </ScrollView>
     )
 }

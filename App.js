@@ -14,6 +14,7 @@ import HomeScreen from './src/screens/Homescreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ProductsContainer from './src/components/ProductsContainer';
 import Navbar from './src/components/Navbar';
+import ShoppingCart from './src/components/ShoppingCart';
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
