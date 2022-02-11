@@ -11,8 +11,8 @@ import {
     Button
   } from 'react-native';
   import {connect} from 'react-redux';
-import {cartRemoveItem, cartAddItem } from '../actions/index';
-const ProductIndividual=(props)=>{
+import {cartRemoveItem} from '../actions/index';
+const ShoppingCartItem=(props)=>{
     const {item}=props
     return(
         <View style={styles.root}>
@@ -23,7 +23,7 @@ const ProductIndividual=(props)=>{
             <Text style={styles.itemName} numberOfLines={2}>{item.title}</Text>
             <Text style={styles.itemPrice}>${item.price}</Text>
             <View style={styles.itemButtonContainer}>
-                <Button onPress={()=>props.dispatch(cartAddItem(item))} title='Add to Cart'/>
+                <Button onPress={()=>props.dispatch(cartRemoveItem(item.id))} title='Remove from Cart'/>
             </View>
         </View>
     </View>
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
         cartContents:state.cart
     }
   }  
-export default connect(mapStateToProps)(ProductIndividual);
+export default connect(mapStateToProps)(ShoppingCartItem);

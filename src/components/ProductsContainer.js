@@ -12,7 +12,6 @@ import {
 import ProductIndividual from './ProductIndividual';
 import Data from '../data/products';
 import {connect} from 'react-redux';
-import {cartRemoveItem, cartAddItem } from '../actions/index';
 const ProductsContainer =(props)=>{
     console.log('thisis',props)
     return(
