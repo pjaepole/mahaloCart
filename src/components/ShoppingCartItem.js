@@ -13,6 +13,8 @@ import {
 import {connect} from 'react-redux';
 import {cartRemoveItem} from '../actions/index';
 const ShoppingCartItem = props => {
+  console.log(props);
+  console.log(props);
   const {item} = props;
   return (
     <View style={styles.root}>
@@ -24,9 +26,10 @@ const ShoppingCartItem = props => {
           {item.title}
         </Text>
         <Text style={styles.itemPrice}>${item.price}</Text>
+        <Text style={styles.itemPrice}>Quantity:{item.quantity}</Text>
         <View style={styles.itemButtonContainer}>
           <Button
-            onPress={() => props.dispatch(cartRemoveItem(item.id))}
+            onPress={() => props.dispatch(cartRemoveItem(item))}
             title="Remove from Cart"
           />
         </View>
