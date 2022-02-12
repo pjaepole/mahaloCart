@@ -39,14 +39,16 @@ const cartItems = (state = initialState, action) => {
               : product,
           ),
         };
-      } else if (item2.quanity <= 1) {
+      } 
+      if (item2) {
         return {
           ...state,
           cart: state.cart.filter(product => {
-            return product.id !== action.payload;
+            return product.id !== action.payload.id;
           }),
         };
       }
+      
     default:
       return state;
   }
