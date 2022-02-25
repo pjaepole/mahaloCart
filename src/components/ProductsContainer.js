@@ -20,6 +20,10 @@ const ProductsContainer = props => {
         title="Go TO Cart"
         onPress={() => props.navigation.navigate('Shopping Cart')}
       />
+      <Button
+        title="Sign up form"
+        onPress={() => props.navigation.navigate('SignUp Form')}
+      />
       {Data.map(item => (
         <ProductIndividual key={item.id} item={item} />
       ))}

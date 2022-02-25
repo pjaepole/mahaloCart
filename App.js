@@ -28,7 +28,7 @@ const App: () => Node = () => {
         <Stack.Navigator initialRouteName="Product">
           <Stack.Screen name="SignUp Form" component={SignUpForm} />
           <Stack.Screen name="Product" component={ProductsContainer} />
-          <Stack.Screen name="Shopping Cart" component={SignUpForm} />
+          <Stack.Screen name="Shopping Cart" component={ShoppingCart} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
