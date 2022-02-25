@@ -18,6 +18,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Provider} from 'react-redux';
 import store from './src/store/index';
+import SignUpForm from './src/components/SignUpForm';
 const Stack = createNativeStackNavigator();
 const App: () => Node = () => {
   return (
@@ -25,8 +26,9 @@ const App: () => Node = () => {
       <NavigationContainer>
         <Navbar />
         <Stack.Navigator initialRouteName="Product">
-          <Stack.Screen name="Product" component={ProductsContainer}/>
-          <Stack.Screen name="Shopping Cart" component={ShoppingCart} />
+          <Stack.Screen name="SignUp Form" component={SignUpForm} />
+          <Stack.Screen name="Product" component={ProductsContainer} />
+          <Stack.Screen name="Shopping Cart" component={SignUpForm} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
